@@ -9,6 +9,8 @@ import Foundation
 
 protocol HomeScreenViewModelDelegate: AnyObject {
     func didFinishFetching()
+    
+    func didfinishWithError(_ string: String)
 }
 
 class HomeScreenViewModel {
@@ -32,6 +34,14 @@ class HomeScreenViewModel {
         
         //Create an HTTP request task
         let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+            if let httpResponse = response as? HTTPURLResponse {
+                let statusCode = httpResponse.statusCode
+                if statusCode != 200 {
+                    self?.handleError(data!)
+                    return
+                }
+            }
+            
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "")
                 return
@@ -49,7 +59,20 @@ class HomeScreenViewModel {
             } catch {
                 print("JSON Decoding Failed: \(error)")
             }
+            
         }
         task.resume()
+    }
+    
+    func handleError(_ data: Data) {
+        //Decode error and talk back to controller
+        do {
+            let error = try JSONDecoder().decode(ErrorResponse.self, from: data)
+            DispatchQueue.main.async {
+                self.homeScreenViewModelDelegate?.didfinishWithError(error.statusMessage)
+            }
+        } catch {
+            print("Error: \(error)")
+        }
     }
 }

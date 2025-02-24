@@ -81,6 +81,17 @@ extension HomeScreenViewController: UICollectionViewDelegate, UICollectionViewDa
 }
 
 extension HomeScreenViewController: HomeScreenViewModelDelegate {
+    //Launch an alert with the HTTP error
+    func didfinishWithError(_ string: String) {
+        print("Error: \(string)")
+        let alert = UIAlertController(title: "You succeeded at failing!",
+                                      message: string,
+                                      preferredStyle: .alert)
+        let accept = UIAlertAction(title: "Great!", style: .default, handler: nil)
+        alert.addAction(accept)
+        present(alert, animated: true, completion: nil)
+    }
+    
     //Here we refresh the table after fetching data
     func didFinishFetching() {
         collectionView?.reloadData()
