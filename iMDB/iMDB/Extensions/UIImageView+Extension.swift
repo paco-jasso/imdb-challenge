@@ -14,12 +14,13 @@ extension UIImageView {
             return
         }
         
-        DispatchQueue.global().async {
-            if let data = try? Data(contentsOf: url), let loadedImage = UIImage(data: data) {
+        //Using URL sesion to avoid performance loss
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data, let loadedImage = UIImage(data: data) {
                 DispatchQueue.main.async {
                     self.image = loadedImage
                 }
             }
-        }
+        }.resume()
     }
 }
