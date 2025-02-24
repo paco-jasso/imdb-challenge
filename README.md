@@ -12,12 +12,19 @@ The UI is a simple-but-effective UICollectionView briefly displaying the data fr
 This will keep a user-friendly and intuitive experience.
 
 The app is built in Swift using Xcode as this is a challenge for an iOS Developer role.
-Xcode version    - 16.1
-Swift vwrsion    - 6.0.2 
-TMDB API version - 3.0
+- Xcode version    - 16.1
+- Swift version    - 6.0.2 
+- TMDB API version - 3.0
 
 
   
 ## Running the App
 
 You can choose between the [tool install] or running directly from Xcode by cloning the project to your machine.
+
+
+
+## Dark Mode Support
+
+The app supports color styling based on the device settings.
+NOTE: this doesn't work real-time to adapt to changes on the device settings, restart the app
