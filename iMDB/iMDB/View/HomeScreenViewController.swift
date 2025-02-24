@@ -36,8 +36,17 @@ class HomeScreenViewController: UIViewController {
     }
 
     func setUpUI() {
+        //Dark/Light mode support
+        ColorPalette.shared.setColorPalette(traitCollection)
+        
+        //Main UI elements
         titleLabel.text = "iMDB"
+        titleLabel.textColor = ColorPalette.shared.accentFontColor
         subtitleLabel.text = "Popular Movies Right Now"
+        subtitleLabel.textColor = ColorPalette.shared.accentFontColor
+        
+        view.backgroundColor = ColorPalette.shared.backgroundColor
+        collectionView.backgroundColor = ColorPalette.shared.backgroundColor
     }
     
     func showDetailScreenFor(movie: Movie) {

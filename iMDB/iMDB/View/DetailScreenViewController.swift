@@ -28,6 +28,13 @@ class DetailScreenViewController: UIViewController {
         //UI Styling
         posterImage.clipsToBounds = true
         posterImage.layer.cornerRadius = 10.0
+        
+        view.backgroundColor = ColorPalette.shared.backgroundColor
+        titleLabel.textColor = ColorPalette.shared.baseFontColor
+        genresLabel.textColor = ColorPalette.shared.accentFontColor
+        releaseDateLabel.textColor = ColorPalette.shared.baseFontColor
+        overviewLabel.textColor = ColorPalette.shared.baseFontColor
+        
     }
     
     func setUpData() {

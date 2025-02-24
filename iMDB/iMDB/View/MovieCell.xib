@@ -79,6 +79,7 @@
                 <outlet property="cellBackground" destination="SRS-KB-3ly" id="AQk-q0-bhr"/>
                 <outlet property="genresLabel" destination="KCV-2s-1SD" id="B2l-jG-jNi"/>
                 <outlet property="posterImage" destination="cL6-Z8-8KH" id="dmV-sh-3ff"/>
+                <outlet property="titleBanner" destination="Fo8-um-L74" id="p5X-sg-Xpa"/>
                 <outlet property="titleLabel" destination="RVC-oO-tDV" id="bmv-1R-Sgx"/>
             </connections>
             <point key="canvasLocation" x="-12.213740458015266" y="149.29577464788733"/>
