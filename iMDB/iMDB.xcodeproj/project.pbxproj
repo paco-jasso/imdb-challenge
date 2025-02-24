@@ -40,6 +40,7 @@
 		8A49D3D92D6BD83E0048FF3B /* Exceptions for "iMDB" folder in "iMDBTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				ColorPalette.swift,
 				Constants.swift,
 				"Extensions/UIImageView+Extension.swift",
 				Model/Movie.swift,
@@ -53,6 +54,7 @@
 		8A49D3DA2D6BD83E0048FF3B /* Exceptions for "iMDB" folder in "iMDBUITests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				ColorPalette.swift,
 				Constants.swift,
 				"Extensions/UIImageView+Extension.swift",
 				Model/Movie.swift,
