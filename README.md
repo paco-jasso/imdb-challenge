@@ -28,3 +28,18 @@ You can choose between the [tool install] or running directly from Xcode by clon
 
 The app supports color styling based on the device settings.
 NOTE: this doesn't work real-time to adapt to changes on the device settings, restart the app
+
+
+
+## Language Support
+
+The app supports different languages such as:
+- English (en)
+- Spanish (es)
+- French (fr)
+- German (de)
+- Italian (it)
+- Japanese (ja)
+
+The app language is based on the device settings.
+NOTE: If the language is not supported, the app will show in English. Also, some translations are not on available at TMDB.
