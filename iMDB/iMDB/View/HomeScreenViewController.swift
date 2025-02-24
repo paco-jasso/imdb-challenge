@@ -17,6 +17,7 @@ class HomeScreenViewController: UIViewController {
     private var viewModel: HomeScreenViewModel
     
     required init?(coder: NSCoder) {
+        //Configure ViewModel
         self.viewModel = HomeScreenViewModel()
         super.init(coder: coder)
         self.viewModel.homeScreenViewModelDelegate = self
@@ -24,6 +25,8 @@ class HomeScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Confirguring UICollectionView
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "MovieCell", bundle: nil), forCellWithReuseIdentifier: "MovieCell")
@@ -36,9 +39,21 @@ class HomeScreenViewController: UIViewController {
         titleLabel.text = "iMDB"
         subtitleLabel.text = "Popular Movies Right Now"
     }
+    
+    func showDetailScreenFor(movie: Movie) {
+        //This shows a new screen with the full details of the movie
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let detailsViewController = storyboard.instantiateViewController(withIdentifier: "DetailsScreen") as? DetailScreenViewController else {
+            return
+        }
+        detailsViewController.movie = movie
+        present(detailsViewController, animated: true, completion: nil)
+    }
 
 }
 
+//UICollectionView Delegate & DataSource, here we manage the view
 extension HomeScreenViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.movies.count
@@ -52,10 +67,14 @@ extension HomeScreenViewController: UICollectionViewDelegate, UICollectionViewDa
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        showDetailScreenFor(movie: viewModel.movies[indexPath.row])
+    }
     
 }
 
 extension HomeScreenViewController: HomeScreenViewModelDelegate {
+    //Here we refresh the table after fetching data
     func didFinishFetching() {
         collectionView?.reloadData()
     }

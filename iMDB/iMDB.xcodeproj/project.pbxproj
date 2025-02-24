@@ -41,7 +41,11 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Constants.swift,
+				"Extensions/UIImageView+Extension.swift",
 				Model/Movie.swift,
+				View/DetailScreenViewController.swift,
+				View/MovieCell.swift,
+				View/MovieCell.xib,
 				ViewModel/HomeScreenViewModel.swift,
 			);
 			target = 8A49D3B32D6BD6250048FF3B /* iMDBTests */;
@@ -50,7 +54,11 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Constants.swift,
+				"Extensions/UIImageView+Extension.swift",
 				Model/Movie.swift,
+				View/DetailScreenViewController.swift,
+				View/MovieCell.swift,
+				View/MovieCell.xib,
 				ViewModel/HomeScreenViewModel.swift,
 			);
 			target = 8A49D3BD2D6BD6260048FF3B /* iMDBUITests */;
