@@ -11,6 +11,8 @@ import UIKit
 class HomeScreenViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
     
     private var viewModel: HomeScreenViewModel
     
@@ -24,12 +26,15 @@ class HomeScreenViewController: UIViewController {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.register(UINib(nibName: "MovieCell", bundle: nil), forCellWithReuseIdentifier: "MovieCell")
+        
         setUpUI()
         viewModel.fetchPopularMovies()
     }
 
     func setUpUI() {
-        
+        titleLabel.text = "iMDB"
+        subtitleLabel.text = "Popular Movies Right Now"
     }
 
 }
@@ -40,7 +45,11 @@ extension HomeScreenViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCell", for: indexPath) as? MovieCell else {
+            return UICollectionViewCell()
+        }
+        cell.setUpCellWith(movie: viewModel.movies[indexPath.row])
+        return cell
     }
     
     
