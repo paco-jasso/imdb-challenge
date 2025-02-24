@@ -18,7 +18,9 @@ class HomeScreenViewModel {
     
     func fetchPopularMovies() {
         //Create the URL
-        guard let url = URL(string: Constants.popularMoviesURL) else {
+        let languageCode = Locale.current.language.languageCode?.identifier ?? "en"
+        let urlString = String(format: Constants.popularMoviesURL, languageCode)
+        guard let url = URL(string: urlString) else {
             return
         }
         

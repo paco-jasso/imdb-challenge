@@ -19,7 +19,7 @@ struct Movie: Codable {
     let release: String
     
     enum CodingKeys: String, CodingKey {
-        case title = "original_title"
+        case title = "title"
         case posterPath = "poster_path"
         case genres = "genre_ids"
         case overview = "overview"

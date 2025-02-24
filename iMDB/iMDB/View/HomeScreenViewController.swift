@@ -40,9 +40,7 @@ class HomeScreenViewController: UIViewController {
         ColorPalette.shared.setColorPalette(traitCollection)
         
         //Main UI elements
-        titleLabel.text = "iMDB"
         titleLabel.textColor = ColorPalette.shared.accentFontColor
-        subtitleLabel.text = "Popular Movies Right Now"
         subtitleLabel.textColor = ColorPalette.shared.accentFontColor
         
         view.backgroundColor = ColorPalette.shared.backgroundColor

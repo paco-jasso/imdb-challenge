@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "Overview"; ObjectID = "Aem-KL-swG"; */
+"Aem-KL-swG.text" = "Overview";
+
+/* Class = "UILabel"; text = "Release date"; ObjectID = "GjE-ZP-rFK"; */
+"GjE-ZP-rFK.text" = "Release date";
+
+/* Class = "UILabel"; text = "Trending"; ObjectID = "PMc-Ck-8l5"; */
+"PMc-Ck-8l5.text" = "Films tendances";
+
+/* Class = "UILabel"; text = "Genres"; ObjectID = "YRK-XM-iTq"; */
+"YRK-XM-iTq.text" = "Genres";
+
+/* Class = "UILabel"; text = "Title Tabel"; ObjectID = "g4P-lb-ca2"; */
+"g4P-lb-ca2.text" = "iMDB";
+
+/* Class = "UILabel"; text = "Movie Title"; ObjectID = "wbU-EQ-z3c"; */
+"wbU-EQ-z3c.text" = "Movie Title";
