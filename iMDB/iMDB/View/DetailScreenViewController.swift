@@ -25,13 +25,13 @@ class DetailScreenViewController: UIViewController {
     }
     
     func setUpUI() {
+        //UI Styling
         posterImage.clipsToBounds = true
         posterImage.layer.cornerRadius = 10.0
-        
-        
     }
     
     func setUpData() {
+        //Display the data on the screen
         posterImage.getPoster(from: movie.posterPath)
         titleLabel.text = movie.title
         genresLabel.text = formattedGenres(movie.genres)
@@ -44,6 +44,7 @@ class DetailScreenViewController: UIViewController {
     }
     
     func formattedDate(_ date: String) -> String {
+        //Change from API's generic date format to full date
         let apiFormat = DateFormatter()
         apiFormat.dateFormat = "yyyy-MM-dd"
         let date = apiFormat.date(from: date) ?? Date()
